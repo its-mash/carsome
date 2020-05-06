@@ -52,7 +52,7 @@ export function isDisabledDate(date){
 export function disabled_dates(req,res){
     var today=new Date()
     var disabledDates=[]
-    for(var i=0;i<25;i++){
+    for(var i=0;i<21;i++){
         if(isDisabledDate(new Date(today)))
             disabledDates.push(getSqlDate(today))
         today.setDate(today.getDate()+1)

@@ -1,14 +1,14 @@
-import * as todoList from '../controller/appController.js'
+import * as inspection from '../controller/inspectionController.js'
 
 export default function(app) {
 
-  // todoList Routes
-  app.route('/tasks')
-    .get(todoList.list_all_tasks)
-    .post(todoList.create_a_task);
-   
-   app.route('/tasks/:taskId')
-    .get(todoList.read_a_task)
-    .put(todoList.update_a_task)
-    .delete(todoList.delete_a_task);
+
+  app.route('/inspection')
+    .post(inspection.create_inspection);
+    
+  app.route('/disabled-dates')
+    .get(inspection.disabled_dates)
+    
+  app.route('/available-slots/:date')
+    .get(inspection.available_slots)
 };
